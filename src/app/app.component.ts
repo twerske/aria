@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-
+import { KeyboardComponent } from './keyboard/keyboard.component';
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  standalone: true,
+  imports: [
+    KeyboardComponent
+  ],
+  template: `
+    <app-keyboard></app-keyboard>
+  `,
 })
-export class AppComponent {
-  title = 'aria';
-}
+export class AppComponent {}
