@@ -1,10 +1,16 @@
 export type Note = {
   name: string;
   sharp: boolean;
+  flat?: Note;
   octaveOffset?: number;
 };
 
 export const OCTAVE: Note[] = [
+  {
+    name: "E",
+    sharp: false,
+    octaveOffset: -1
+  },
   {
     name: "F",
     sharp: false,
@@ -56,8 +62,18 @@ export const OCTAVE: Note[] = [
   {
     name: "E",
     sharp: false
+  },
+  {
+    name: "F",
+    sharp: false
   }
 ];
+
+OCTAVE[2].flat = OCTAVE[3];
+OCTAVE[4].flat = OCTAVE[5];
+OCTAVE[6].flat = OCTAVE[7];
+OCTAVE[9].flat = OCTAVE[10];
+OCTAVE[11].flat = OCTAVE[12];
 
 export const getHz = (note: Note = OCTAVE[0]) => {
   const A4 = 440;
@@ -114,7 +130,6 @@ export const getHz = (note: Note = OCTAVE[0]) => {
 };
 
 export const playNote = (note: Note, audioContext: AudioContext) => {
-
   const osc = audioContext.createOscillator();
   const noteGainNode = audioContext.createGain();
   noteGainNode.connect(audioContext.destination);
@@ -154,8 +169,5 @@ export const playNote = (note: Note, audioContext: AudioContext) => {
     osc.frequency.value = freq;
   }
 
-  // keys[key].element.classList.add("pressed");
-  // pressedNotes.set(key, osc);
-  // pressedNotes.get(key).start();
   osc.start()
 };

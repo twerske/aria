@@ -19,7 +19,8 @@ import { Note, OCTAVE } from '../musical';
       <button class="key black"
        (click)="this.playKey.emit(note)"
       >
-        {{ note.name }}#
+        {{ note.name }}♯
+        {{ note.flat?.name }}♭
       </button>
     </ng-template>
   `,
@@ -43,7 +44,7 @@ import { Note, OCTAVE } from '../musical';
       background: $white;
   
       width: clamp(30px, 10vw, 170px);
-      height: clamp(240px, 50vh, 450px);
+      height: clamp(240px, 40vh, 500px);
 
       font-size: clamp(30px, 6vw, 150px);
       
@@ -52,6 +53,9 @@ import { Note, OCTAVE } from '../musical';
     }
 
     .white:active {
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: $white;
+
       background-image: radial-gradient($pink 30%, transparent 30%);
       background-color: $teal;
       background-position: 0 0, 30px 30px;
@@ -63,10 +67,10 @@ import { Note, OCTAVE } from '../musical';
       color: $white;
       background: $purple;
 
-      width: clamp(15px, 6vw, 100px);
-      height: clamp(120px, 30vh, 250px);
+      width: clamp(16px, 6vw, 100px);
+      height: clamp(120px, 25vh, 250px);
 
-      font-size: clamp(15px, 4vw, 100px);
+      font-size: clamp(13px, 3.5vw, 50px);
 
       border: 3px solid $pink;
       border-radius: 0 0 2px 2px;
@@ -76,6 +80,9 @@ import { Note, OCTAVE } from '../musical';
     }
 
     .black:active {
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: $purple;
+
       opacity: 1;
       background-image:  linear-gradient(135deg, $pink 25%, transparent 25%), linear-gradient(225deg, $pink 25%, transparent 25%), linear-gradient(45deg, $pink 25%, transparent 25%), linear-gradient(315deg, $pink 25%, $lime 25%);
       background-position:  20px 0, 20px 0, 0 0, 0 0;
