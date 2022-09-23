@@ -11,7 +11,7 @@ import { Note, OCTAVE } from '../musical';
       *ngIf="!note.sharp; else sharp" 
       class="key white" 
       [ngStyle]="{'margin-left': note.name !== 'F' && note.name !== 'C' ? '-6%' : '0'}"
-      (click)="this.playKey.emit(note)"
+      (mousedown)="this.playKey.emit(note)"
     >
       {{ note.name }}
     </button>
@@ -43,8 +43,8 @@ import { Note, OCTAVE } from '../musical';
       color: $purple;
       background: $white;
   
-      width: clamp(30px, 10vw, 170px);
-      height: clamp(240px, 40vh, 500px);
+      width: clamp(1px, 10vw, 170px);
+      height: clamp(1px, 40vh, 500px);
 
       font-size: clamp(30px, 6vw, 150px);
       
@@ -67,8 +67,8 @@ import { Note, OCTAVE } from '../musical';
       color: $white;
       background: $purple;
 
-      width: clamp(16px, 6vw, 100px);
-      height: clamp(120px, 25vh, 250px);
+      width: clamp(1px, 6vw, 100px);
+      height: clamp(1px, 25vh, 250px);
 
       font-size: clamp(13px, 3.5vw, 50px);
 
