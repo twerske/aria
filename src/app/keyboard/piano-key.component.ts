@@ -43,7 +43,6 @@ import { Note, OCTAVE } from '../musical';
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
-      -webkit-tap-highlight-color: rgba(0,0,0,0);
     }
     
     .white {
