@@ -37,12 +37,6 @@ import { Note, OCTAVE } from '../musical';
       padding-bottom: 1rem;
       
       font-family: 'Oswald', sans-serif;
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -khtml-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
     }
     
     .white {
