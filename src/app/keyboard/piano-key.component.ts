@@ -37,6 +37,13 @@ import { Note, OCTAVE } from '../musical';
       padding-bottom: 1rem;
       
       font-family: 'Oswald', sans-serif;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
     }
     
     .white {
@@ -46,7 +53,7 @@ import { Note, OCTAVE } from '../musical';
       width: clamp(1px, 10vw, 170px);
       height: clamp(1px, 40vh, 500px);
 
-      font-size: clamp(30px, 6vw, 150px);
+      font-size: clamp(1px, 6vw, 150px);
       
       border: 3px solid $lime;
       border-radius: 0 0 5px 5px;
@@ -70,7 +77,7 @@ import { Note, OCTAVE } from '../musical';
       width: clamp(1px, 6vw, 100px);
       height: clamp(1px, 25vh, 250px);
 
-      font-size: clamp(13px, 3.5vw, 50px);
+      font-size: clamp(1px, 3.5vw, 50px);
 
       border: 3px solid $pink;
       border-radius: 0 0 2px 2px;
