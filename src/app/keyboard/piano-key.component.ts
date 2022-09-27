@@ -12,12 +12,14 @@ import { Note, OCTAVE } from '../musical';
       class="key white" 
       [ngStyle]="{'margin-left': note.name !== 'F' && note.name !== 'C' ? '-6%' : '0'}"
       (mousedown)="this.playKey.emit(note)"
+      (keydown)="this.playKey.emit(note)"
     >
       {{ note.name }}
     </button>
     <ng-template #sharp>
       <button class="key black"
-       (click)="this.playKey.emit(note)"
+      (mousedown)="this.playKey.emit(note)"
+      (keydown)="this.playKey.emit(note)"
       >
         {{ note.name }}♯
         {{ note.flat?.name }}♭
@@ -53,11 +55,17 @@ import { Note, OCTAVE } from '../musical';
     }
 
     @supports not (width: clamp(1px, 10vw, 170px)) {
-    .white {
-      width: 10vw;
-      height: 40vh;
+      .white {
+        width: 9vw;
+        height: 20vh;
+      }
+
+      .black {
+        width: 4vw;
+        height: 18vh;
+        font-size: 3.5vw;
+      }
     }
-}
 
     .white:active {
       -webkit-text-stroke-width: 2px;

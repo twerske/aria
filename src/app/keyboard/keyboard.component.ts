@@ -23,7 +23,6 @@ import { Note, OCTAVE, playNote } from '../musical';
 export class KeyboardComponent implements OnInit {
   notes = OCTAVE;
   audioContext: AudioContext;
-  // audioContext: AudioContext | undefined;
 
   constructor() {
     this.audioContext = new (window.AudioContext)();
