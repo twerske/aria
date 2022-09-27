@@ -52,7 +52,7 @@ import { Note, OCTAVE } from '../musical';
       border-radius: 0 0 5px 5px;
     }
 
-    @supports not (width: clamp(1px, 10vw, 170px);) {
+    @supports not (width: clamp(1px, 10vw, 170px)) {
     .white {
       width: 10vw;
       height: 40vh;
