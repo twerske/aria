@@ -44,13 +44,20 @@ import { Note, OCTAVE } from '../musical';
       background: $white;
   
       width: clamp(1px, 10vw, 170px);
-      height: clamp(1px, 40vh, 500px);
+      height: clamp(250px, 40vh, 500px);
 
       font-size: clamp(1px, 6vw, 150px);
       
       border: 3px solid $lime;
       border-radius: 0 0 5px 5px;
     }
+
+    @supports not (width: clamp(1px, 10vw, 170px);) {
+    .white {
+      width: 10vw;
+      height: 40vh;
+    }
+}
 
     .white:active {
       -webkit-text-stroke-width: 2px;
@@ -68,7 +75,7 @@ import { Note, OCTAVE } from '../musical';
       background: $purple;
 
       width: clamp(1px, 6vw, 100px);
-      height: clamp(1px, 25vh, 250px);
+      height: clamp(150px, 25vh, 250px);
 
       font-size: clamp(1px, 3.5vw, 50px);
 

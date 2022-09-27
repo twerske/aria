@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PianoKeyComponent } from './piano-key.component';
 import { Note, OCTAVE, playNote } from '../musical';
@@ -20,12 +20,16 @@ import { Note, OCTAVE, playNote } from '../musical';
     }
   `]
 })
-export class KeyboardComponent {
+export class KeyboardComponent implements OnInit {
   notes = OCTAVE;
   audioContext: AudioContext;
+  // audioContext: AudioContext | undefined;
 
   constructor() {
     this.audioContext = new (window.AudioContext)();
+  }
+
+  ngOnInit(): void {
   }
 
   playKey(note: Note) {
