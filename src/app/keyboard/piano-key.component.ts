@@ -48,7 +48,7 @@ import { Note, OCTAVE } from '../musical';
       width: 8%;
       height: 40vh;
 
-      font-size: clamp(16px, 6vw, 150px);
+      font-size: clamp(16.1px, 6vw, 150px);
       
       border: 3px solid $lime;
       border-radius: 0 0 5px 5px;
@@ -72,7 +72,7 @@ import { Note, OCTAVE } from '../musical';
       width: 6%;
       height: 25vh;
 
-      font-size: clamp(16px, 3.5vw, 50px);
+      font-size: clamp(16.1px, 3.5vw, 50px);
 
       border: 3px solid $pink;
       border-radius: 0 0 2px 2px;
